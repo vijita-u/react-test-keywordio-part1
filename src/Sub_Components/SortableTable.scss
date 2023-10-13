@@ -1,0 +1,59 @@
+@use '../scss/utils/' as u;
+
+.sortableTable {
+	width: 100%;
+
+	tr {
+		width: 100%;
+		display: table;
+		padding-inline: 0.625rem;
+		height: 2.1875rem;
+		border-top: 0.0625rem solid var(--border-color);
+	}
+
+	thead > tr {
+		display: table;
+		border-top: none;
+	}
+
+	td,
+	th {
+        text-wrap: wrap;
+		min-width: 6.25rem;
+		text-align: right;
+	}
+
+	.ta-l {
+		text-align: left;
+	}
+
+	tbody {
+		color: var(--secondary-dark-color);
+		font-size: 0.8125rem;
+		font-weight: 300;
+	}
+
+    th:nth-child(1) .sortableTable__headerLabel {
+        justify-content: flex-start;
+    }
+
+
+	&__headerLabel {
+		display: flex;
+		align-items: center;
+        justify-content: flex-end;
+		gap: 0.2rem;
+
+		h5 {
+			font-weight: 600;
+		}
+	}
+
+	&__sortIcon {
+		cursor: pointer;
+	}
+
+	&__totalRow {
+		background-color: var(--background-color);
+	}
+}

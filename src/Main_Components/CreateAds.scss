@@ -1,0 +1,64 @@
+@use "../scss/utils/" as u;
+
+.createAds {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 3.5%);
+	width: 98%;
+	max-width: 93.75rem;
+	height: fit-content;
+	background-color: var(--tertiary-color);
+	border: 0.0625rem solid var(--border-color);
+	border-radius: 0.3125rem;
+
+	@include u.breakpoint-up(medium) {
+		height: 85vh;
+		max-height: 35rem;
+	}
+
+	&__title {
+		font-size: 14px;
+		font-weight: 600;
+		padding: 0.625rem 0.75rem;
+	}
+
+	&__container {
+		height: fit-content;
+		width: 70%;
+		margin: 2rem auto;
+		margin-bottom: 6rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 3rem;
+
+		@include u.breakpoint-up(medium) {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -68%);
+			flex-direction: row;
+		}
+	}
+
+	&__nextBtn {
+		position: absolute;
+		bottom: 1.5%;
+		right: 1.5%;
+		width: 8.25rem;
+		height: 2.25rem;
+		font-weight: bold;
+		border: none;
+		background-color: var(--accent-color);
+		color: var(--tertiary-color);
+		border-radius: 0.1875rem;
+		cursor: pointer;
+	}
+
+	button:disabled,
+	button[disabled] {
+        background-color: var(--border-color);
+	}
+}

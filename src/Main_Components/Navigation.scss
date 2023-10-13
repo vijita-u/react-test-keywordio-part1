@@ -1,0 +1,107 @@
+@use "../scss/utils" as u;
+
+.navigation {
+	position: sticky;
+	height: 3.75rem;
+	width: 100vw;
+	max-width: 93.75rem;
+	margin-inline: auto;
+	background-color: var(--tertiary-color);
+	box-shadow: .125rem .125rem .3125rem var(--border-shadow);
+	letter-spacing: 0.5pt;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-inline: 0.9375rem;
+
+	@include u.breakpoint-up(small) {
+		padding-inline: 1.875rem;
+	}
+
+	&__logo {
+		font-size: 1rem;
+		font-weight: 700;
+
+		@include u.breakpoint-up(small) {
+			font-size: 1.25rem;
+		}
+	}
+
+	&__hamburger {
+		width: 3.125rem;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+
+		@include u.breakpoint-up(small) {
+			display: none;
+		}
+
+		.first,
+		.last {
+			width: 65%;
+			height: 0.1875rem;
+			border-radius: 3.125rem;
+			background-color: var(--primary-color);
+			transform-origin: center;
+			transition: transform 400ms ease-in-out;
+		}
+	}
+
+	&__navigate {
+		background-color: var(--tertiary-color);
+		position: absolute;
+
+		@include u.breakpoint-up(small) {
+			position: relative;
+			font-weight: 500;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			gap: 1.3rem;
+			height: 100%;
+		}
+
+		li {
+			cursor: pointer;
+            transition: color 200ms ease-in-out;
+			font-size: .875rem;
+			font-weight: 600;
+
+            &:hover {
+                color: var(--accent-color);
+            }
+		}
+	}
+
+	.close {
+        visibility: hidden;
+		transform: scale(1, 0);
+	}
+
+	.open {
+		top: 4.6rem;
+		right: 0;
+		transform-origin: top;
+		transform: scale(1);
+		width: max(30%, 12.5rem);
+		transition: transform 400ms ease-in-out;
+		box-shadow: .125rem .125rem .3125rem var(--border-shadow);
+
+		li {
+			position: relative;
+			z-index: 999;
+			padding: 1.25rem 1.875rem;
+			border-bottom: 1px solid var(--border-color);
+			transition: background-color 400ms ease-in-out;
+
+			&:hover {
+				background-color: var(--accent-color);
+                color: var(--primary-color);
+			}
+		}
+	}
+}

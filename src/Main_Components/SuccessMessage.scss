@@ -1,0 +1,34 @@
+.successMessage {
+	position: relative;
+	overflow: hidden;
+	height: 80vh;
+	background: url("../images/success.png");
+	background-position: center center;
+
+	&__dialogBox {
+		background-color: var(--tertiary-color);
+		box-shadow: 0 0 .5rem var(--border-color);
+		width: 100%;
+		max-width: 25rem;
+		height: 12.5rem;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: 0.1875rem;
+		display: grid;
+		place-items: center;
+	}
+
+	&__message {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: fit-content;
+
+		h3 {
+			font-weight: 500;
+		}
+	}
+}

@@ -1,0 +1,30 @@
+.toggle {
+	position: absolute;
+	bottom: 3%;
+	right: 3%;
+	width: 4.375rem;
+	height: 2.1875rem;
+	background-color: var(--border-shadow);
+	border-radius: 3.125rem;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 0.625rem;
+	padding-inline: 0.4375rem;
+	cursor: pointer;
+
+	&__highlight {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: var(--accent-color);
+		width: 2.1875rem;
+		height: 2.1875rem;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	&__icons {
+		position: relative;
+	}
+}

@@ -1,0 +1,40 @@
+@use "./scss/utils/" as u;
+
+.dashboard__container {
+	margin-top: 1.875rem;
+	padding-inline: 0.9375rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	@include u.breakpoint-up(small-large) {
+		flex-direction: row;
+		justify-content: space-evenly;
+		padding-inline: 1.875rem;
+	}
+}
+
+.adInsights__container {
+	position: relative;
+	background-color: var(--tertiary-color);
+	width: 100%;
+	min-height: 20.75rem;
+	border: 2px solid var(--border-color);
+	border-radius: 0.3125rem !important;
+
+	@include u.breakpoint-down(small) {
+		overflow-x: scroll;
+	}
+}
+
+.helpIcon {
+	fill: var(--border-color) !important;
+}
+
+.bb {
+	border-bottom: 0.0625rem solid var(--border-color);
+}
+
+.hidden {
+	display: none !important;
+}

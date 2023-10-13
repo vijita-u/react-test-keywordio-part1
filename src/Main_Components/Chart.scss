@@ -1,0 +1,64 @@
+@use '../scss/utils/' as u;
+
+.chartDiv {
+	padding: 1.25rem;
+	display: flex;
+	justify-content: space-evenly;
+
+	@include u.breakpoint-down(small) {
+		align-items: center;
+		gap: 1rem;
+	}
+
+	&__doughnut {
+		width: 40%;
+		min-height: 13.75rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__metrics {
+		width: 30%;
+		min-width: 12.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 1rem;
+
+		@include u.breakpoint-down(small) {
+			min-width: 8.125rem;
+		}
+	}
+
+	&__metric {
+		display: flex;
+        align-items: center;
+		gap: 0.7rem;
+	}
+
+	.chartDiv__metric:nth-child(1) .chartDiv__legendColor {
+		background-color: var(--male-color);
+	}
+	.chartDiv__metric:nth-child(2) .chartDiv__legendColor {
+		background-color: var(--female-color);
+	}
+	.chartDiv__metric:nth-child(3) .chartDiv__legendColor {
+		background-color: var(--unknown-color);
+	}
+
+	&__legendColor {
+		width: 3.4375rem;
+		height: 0.9375rem;
+		border-radius: 3.125rem;
+	}
+
+	&__legendName {
+		font-size: .8125rem;
+		font-weight: 500;
+
+		@include u.breakpoint-down(small) {
+			font-size: .75rem;
+		}
+	}
+}

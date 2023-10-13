@@ -1,0 +1,29 @@
+.insightsHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 2.8125rem;
+	padding-inline: 10px;
+	border-bottom: 1px solid var(--border-color);
+
+	&__title {
+		font-weight: 600;
+	}
+
+	&__metricsAndHelp {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	&__metrics {
+		select {
+			border: 1.4px solid var(--border-color);
+			border-radius: 0.1875rem;
+			box-shadow: 0.5px 0.5px 1px var(--border-color);
+			height: 1.375rem;
+			color: var(--primary-color);
+			font-size: 0.8125rem;
+		}
+	}
+}

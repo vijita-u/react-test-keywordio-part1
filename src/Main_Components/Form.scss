@@ -1,0 +1,158 @@
+@use "../scss/utils/" as u;
+
+.formPage {
+	height: fit-content !important;
+	max-height: unset;
+
+	form {
+		padding: 0.625rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+
+		label {
+			padding: unset;
+		}
+
+		input,
+		select {
+			position: relative;
+			width: 100%;
+			height: 2.9rem;
+			outline: none;
+			border: 0.0625rem solid var(--border-color);
+			border-radius: 0.1875rem;
+			padding-inline: 0.625rem;
+
+			&::placeholder {
+				position: absolute;
+				top: 50%;
+				left: 0%;
+				transform: translate(0%, -50%);
+				padding-inline: 0.625rem;
+				text-wrap: wrap;
+				color: var(--secondary-color);
+				letter-spacing: 0.5pt;
+				font-family: "Montserrat", sans-serif;
+				font-weight: 300;
+				font-size: 0.75rem;
+			}
+
+			&#description1 {
+				height: 7.5rem;
+				
+				@include u.breakpoint-up(medium) {
+					height: 100%;
+				}
+
+				&::placeholder {
+					top: 0%;
+					transform: translateY(70%);
+				}
+			}
+		}
+
+		select {
+			color: var(--secondary-color);
+			font-family: "Montserrat", sans-serif;
+			font-weight: 300;
+		}
+	}
+
+	&__partOne,
+	&__partTwo,
+	&__partThree {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	&__partOne {
+		@include u.breakpoint-up(medium) {
+			display: grid;
+			grid-template-rows: repeat(2, 1fr);
+			grid-template-columns: 1fr 1.2fr;
+			grid-template-areas:
+				"heading1 description1"
+				"heading2 description1";
+		}
+	}
+	&__partTwo {
+		@include u.breakpoint-up(medium) {
+			display: grid;
+			grid-template-rows: repeat(2, 1fr);
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas:
+				"landscapeMarketingImage portfolioMarketingImage squareMarketingImage"
+				"videoURL videoURL videoURL";
+		}
+	}
+	&__partThree {
+		@include u.breakpoint-up(medium) {
+			display: grid;
+			grid-template-rows: repeat(2, 1fr);
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-areas:
+				"businessName buttonLabel"
+				"websiteURL websiteURL";
+		}
+	}
+
+	#heading1 {
+		grid-area: heading1;
+	}
+	#heading2 {
+		grid-area: heading2;
+	}
+	#description1 {
+		grid-area: description1;
+	}
+	#landscapeMarketingImage {
+		grid-area: landscapeMarketingImage;
+	}
+	#portfolioMarketingImage {
+		grid-area: portfolioMarketingImage;
+	}
+	#squareMarketingImage {
+		grid-area: squareMarketingImage;
+	}
+	#videoURL {
+		grid-area: videoURL;
+	}
+	#businessName {
+		grid-area: businessName;
+	}
+	#buttonLabel {
+		grid-area: buttonLabel;
+	}
+	#websiteURL {
+		grid-area: websiteURL;
+	}
+
+	&__buttons {
+		margin-top: 1.5rem;
+		display: flex;
+		gap: 1rem;
+		justify-content: flex-end;
+
+		button {
+			font-family: "Montserrat", sans-serif;
+			font-weight: 600;
+			width: 7.5rem;
+			height: 2.1875rem;
+			cursor: pointer;
+			border: none;
+			border-radius: 0.1875rem;
+			border: 0.0625rem solid var(--border-color);
+		}
+	}
+
+	&__backBtn {
+		background-color: var(--background-color);
+	}
+
+	&__submitBtn {
+		background-color: var(--accent-color);
+		color: var(--tertiary-color);
+	}
+}
