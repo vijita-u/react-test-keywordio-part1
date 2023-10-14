@@ -19,7 +19,7 @@
 	background-color: var(--tertiary-color);
 	width: 100%;
 	min-height: 20.75rem;
-	border: 2px solid var(--border-color);
+	border: .125rem solid var(--border-color);
 	border-radius: 0.3125rem !important;
 
 	@include u.breakpoint-down(small) {
